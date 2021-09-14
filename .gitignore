@@ -60,3 +60,4 @@ build-storybook/
 src/config.js
 .vscode
 .DS_Store
+.env
