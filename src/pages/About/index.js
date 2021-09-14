@@ -3,7 +3,6 @@ import { Helmet } from 'react-helmet-async';
 import PageLayout from 'components/PageLayout';
 import Hero from 'pages/Hero';
 import Mission from './Mission';
-import Lectures from 'pages/Lectures';
 import Team from './Team';
 import GetStarted from 'pages/GetStarted';
 import { useAppContext, useScrollRestore } from 'hooks';
@@ -16,7 +15,6 @@ function About() {
   if (eventsData) eventsData.length = 5;
   const [visibleSections, setVisibleSections] = useState([]);
   const mission = useRef();
-  const eventsList = useRef();
   const team = useRef();
   const getStarted = useRef();
   useScrollRestore();

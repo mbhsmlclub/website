@@ -3,9 +3,7 @@ import classNames from 'classnames';
 import { Paragraph } from 'components/Type';
 import { Link } from 'components/Link';
 import Button from 'components/Button';
-import Icon from 'components/Icon';
 import Hero from 'pages/Hero';
-import { useAppContext } from 'hooks';
 import './Panel.css';
 
 const Panel = ({

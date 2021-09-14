@@ -6,14 +6,13 @@ import Hero from 'pages/Hero';
 import GetStarted from 'pages/GetStarted';
 import Panel from './Panel';
 import { useAppContext, useScrollRestore } from 'hooks';
-import prerender from 'utils/prerender';
 
 const NotFound = lazy(() => import('pages/NotFound'));
 
 function Lectures(props) {
   const { id, sectionRef, visible, ...rest } = props;
   const titleId = `${id}-title`;
-  const { dispatch, lectures } = useAppContext();
+  const { lectures } = useAppContext();
 
   if (!sectionRef) return (
     <Suspense fallback={<Fragment />}>

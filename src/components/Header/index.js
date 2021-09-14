@@ -14,19 +14,12 @@ import { navLinks } from 'data/nav';
 import './index.css';
 
 const Header = ({ dark }) => {
-  const { menuOpen, dispatch, user } = useAppContext();
+  const { menuOpen, dispatch } = useAppContext();
   const [hashKey, setHashKey] = useState();
   const location = useLocation();
   const { width } = useWindowSize();
   const isMobile = width <= media.mobile;
   const isDark = menuOpen ? !dark : dark;
-
-  const onClick = () => dispatch({ type: 'setRedirect', value: '/' });
-
-  const signOut = event => {
-    event.preventDefault();
-    dispatch({ type: 'setUser', value: null });
-  };
 
   const handleNavClick = () => {
     setHashKey(Math.random().toString(32).substr(2, 8));
