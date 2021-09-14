@@ -4,7 +4,6 @@ import Hero from 'pages/Hero';
 import AreebIMG from '../../assets/areeb.jpg';
 import MichaelIMG from '../../assets/michael.png';
 import VijayIMG from '../../assets/vijay.jpg';
-import Anchor from '../../components/Anchor'
 import './Team.css'
 
 function Team(props) {
