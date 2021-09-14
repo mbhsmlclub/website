@@ -1,0 +1,73 @@
+.label {
+  --labelColor: rgb(var(--rgbAccent));
+  color: var(--labelColor);
+  font-size: var(--fontSizeH3);
+  font-weight: var(--fontWeightSemiBold);
+  letter-spacing: var(--letterSpacingH3);
+  line-height: var(--lineHeightTitle);
+  text-transform: uppercase;
+  background: none;
+}
+
+.title {
+  --titleColor: rgb(var(--rgbText));
+  color: var(--titleColor);
+  font-size: var(--fontSizeH1);
+  font-weight: var(--fontWeightBold);
+  letter-spacing: var(--letterSpacingH1);
+  line-height: var(--lineHeightTitle);
+}
+
+.title--dark {
+  --titleColor: rgb(var(--rgbWhite));
+}
+
+.title2 {
+  --title2Color: rgb(var(--rgbText));
+  color: var(--title2Color);
+  font-size: var(--fontSizeH2);
+  font-weight: var(--fontWeightBold);
+  line-height: var(--lineHeightTitle);
+}
+
+.title2--dark {
+  --title2Color: rgb(var(--rgbWhite));
+}
+
+.paragraph {
+  --paragraphColor: var(--colorTextBody);
+  color: var(--paragraphColor);
+  font-size: var(--fontSizeBody);
+  font-weight: var(--fontWeightLight);
+  letter-spacing: var(--letterSpacingBody);
+  line-height: var(--lineHeightBody);
+}
+
+.paragraph--dark {
+  --paragraphColor: rgb(var(--rgbWhite));
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+
+.loading {
+  animation: pulse 1.5s infinite;
+  background: rgb(var(--rgbBlack) / 0.2);
+  color: rgb(var(--rgbBlack) / 0.2)!important;
+  height: calc(var(--fontSizeH3) * var(--lineHeightTitle));
+  width: 100%;
+}
+
+.loading::before,
+.loading::after {
+  opacity: 0;
+}

@@ -1,0 +1,25 @@
+.socials {
+  --socialsColor: var(--rgbText);
+  align-items: center;
+  display: flex;
+}
+
+.socials--dark {
+  --socialsColor: var(--rgbWhite);
+}
+
+.socials__link {
+  color: rgb(var(--socialsColor) / 0.6)!important;
+  margin-left: var(--spaceXL);
+  transition: color var(--durationM) var(--ease1);
+}
+
+.socials__link:first-of-type {
+  margin-left: 0;
+}
+
+.socials__link:hover,
+.socials__link:focus,
+.socials__link:active {
+  color: rgb(var(--socialsColor))!important;
+}

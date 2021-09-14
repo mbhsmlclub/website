@@ -1,0 +1,71 @@
+.nav-toggle {
+  --toggleBackground: rgb(var(--rgbText));
+  --toggleColor: rgb(var(--rgbWhite));
+  align-items: center;
+  background: var(--toggleBackground);
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 40px;
+  justify-content: center;
+  outline: 0;
+  position: relative;
+  width: 40px;
+}
+
+.nav-toggle--dark {
+  --toggleBackground: rgb(var(--rgbWhite));
+  --toggleColor: rgb(var(--rgbText));
+}
+
+.line,
+.nav-toggle::before,
+.nav-toggle::after {
+  background: var(--toggleColor);
+  height: 1px;
+  margin-left: 5px;
+  margin-top: 4px;
+  transition: all 0.45s var(--ease1);
+  width: 12px;
+}
+
+.nav-toggle::before {
+  margin-top: 0;
+}
+
+.nav-toggle::before,
+.nav-toggle::after {
+  content: '';
+  margin-left: 0;
+  width: 17px;
+}
+
+.nav-toggle:hover .line,
+.nav-toggle:active .line,
+.nav-toggle:focus .line {
+  margin-left: 0;
+  width: 17px;
+}
+
+.nav-toggle--open .line {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.nav-toggle--open::before,
+.nav-toggle--open::after {
+  left: 12px;
+  margin: 0;
+  position: absolute;
+  top: 20px;
+}
+
+.nav-toggle--open::before {
+  transform: rotate(45deg);
+}
+
+.nav-toggle--open::after {
+  transform: rotate(-45deg);
+}

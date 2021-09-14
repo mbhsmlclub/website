@@ -1,0 +1,10 @@
+.mission {
+  background: rgb(var(--rgbBackgroundSecondary));
+}
+.paragraph {
+  letter-spacing: 0;
+}
+
+.mission--alternate {
+  --heroBackground: rgb(var(--rgbBackgroundSecondary));
+}

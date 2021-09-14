@@ -1,0 +1,25 @@
+.intro {
+  min-height: 100vh;
+}
+
+.intro .title,
+.intro .paragraph {
+  width: auto;
+}
+
+.intro .title {
+  margin-top: 45px;
+  max-width: 658px;
+}
+
+.intro .paragraph {
+  margin-top: 20px;
+  max-width: 530px;
+}
+
+@media (max-width: 696px) {
+  .intro .title,
+  .intro .paragraph {
+    max-width: none;
+  }
+}

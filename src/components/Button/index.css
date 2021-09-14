@@ -1,0 +1,74 @@
+.button {
+  --buttonColor: rgb(var(--rgbText));
+  --buttonBackground: rgb(var(--rgbBlack) / 0.05);
+  align-items: center;
+  background: none;
+  border-style: none;
+  cursor: pointer;
+  display: flex;
+  height: var(--space2XL);
+  outline: 0;
+  padding: 0 var(--spaceL);
+}
+
+.button--dark {
+  --buttonColor: rgb(var(--rgbWhite));
+  --buttonBackground: #323135;
+}
+
+.button--accent {
+  --buttonColor: rgb(var(--rgbWhite));
+  --buttonBackground: rgb(var(--rgbWhite) / 0.2);
+}
+
+.button,
+.button span {
+  color: var(--buttonColor);
+  font-family: var(--fontStack);
+  font-size: 0.75rem;
+  font-weight: var(--fontWeightBold);
+  letter-spacing: 0.25em;
+  line-height: var(--spaceL);
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.button span,
+.button svg {
+  z-index: 2;
+}
+
+.button svg {
+  display: inline-block;
+  margin-left: calc(var(--spaceL) + 4px);
+  opacity: 0.7;
+  position: relative;
+  transition: margin var(--durationL) var(--ease1);
+}
+
+.button::before {
+  background: var(--buttonBackground);
+  border-radius: var(--spaceL);
+  content: '';
+  display: block;
+  height: var(--space2XL);
+  left: 0;
+  position: absolute;
+  top: 0;
+  transition: width var(--durationM) var(--ease1);
+  width: var(--space2XL);
+  z-index: 1;
+}
+
+.button:focus::before,
+.button:hover::before,
+.button:active::before {
+  width: 100%;
+}
+
+.button:focus svg,
+.button:hover svg,
+.button:active svg {
+  margin-left: calc(var(--spaceXL) + 4px);
+}

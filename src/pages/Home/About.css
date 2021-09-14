@@ -1,0 +1,7 @@
+.about .paragraph {
+  letter-spacing: 0;
+}
+
+.about--alternate {
+  --heroBackground: rgb(var(--rgbBackgroundSecondary));
+}
