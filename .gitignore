@@ -61,3 +61,4 @@ build/
 build-storybook/
 .firebase
 src/config.js
+.vscode
