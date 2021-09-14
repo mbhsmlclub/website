@@ -1,6 +1,6 @@
 # 🌐 [ML Club Website](https://mbhsml.vercel.app)
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/6c70b27d-08a8-4e29-954d-56fe3f7af127/deploy-status)](https://app.netlify.com/sites/keen-snyder-f80841/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/6c70b27d-08a8-4e29-954d-56fe3f7af127/deploy-status)](https://app.netlify.com/sites/mbhsml/deploys)
 
 [![Site preview](/public/social-image.png)](https://mbhsml.netlify.app)
 
