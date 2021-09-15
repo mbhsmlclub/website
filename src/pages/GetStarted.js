@@ -16,7 +16,7 @@ function GetStarted(props) {
       button={{
         accent,
         href: 'https://discord.gg/Usz9UXbQNy',
-        label: 'Join Us',
+        label: 'Join Discord',
         onClick,
       }}
       {...rest}
