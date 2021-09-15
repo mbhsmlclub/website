@@ -11,12 +11,12 @@ function GetStarted(props) {
     <Hero
       center
       accent={accent}
-      label="Get Started"
+      label="Join Us"
       title2="Ready to Learn?"
       button={{
         accent,
         href: 'https://discord.gg/Usz9UXbQNy',
-        label: 'Join Discord',
+        label: 'Get Started',
         onClick,
       }}
       {...rest}

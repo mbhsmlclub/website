@@ -45,7 +45,7 @@ const Header = ({ dark }) => {
           className="header__cta"
           href='https://discord.gg/Usz9UXbQNy'
         >
-          Join Discord
+          Get Started
         </a>
         <NavToggle dark={isDark} menuOpen={menuOpen} />
       </div>

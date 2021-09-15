@@ -50,11 +50,11 @@ function Footer() {
               <div className="footer__left">
                 <Link
                   to={{ pathname: '/', hash: '#intro' }}
-                  aria-label="Fridays at Lunch in Room 220"
+                  aria-label="Tuesdays at Lunch in Room 220"
                 >
                   <Icon icon="logo" />
                 </Link>
-                <Paragraph>Fridays at Lunch | Room 220</Paragraph>
+                <Paragraph>Tuesdays at Lunch | Room 220</Paragraph>
                 <h4>&copy; {new Date().getFullYear()} MBHS ML Club</h4>
                 <Socials className="footer__socials" dark />
               </div>
