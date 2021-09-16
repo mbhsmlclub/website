@@ -1,8 +1,12 @@
+[build]
+    base = "."
+    publish = "./build"
+    command = "yarn build"
 [[redirects]]
     from = "https://mbhsml.netlify.app/*"
     to = "https://ml.mbhs.edu/:splat"
     status = 301
-force = true
+    force = true
 [[redirects]]
     from = "/*"
     to = "/index.html"
