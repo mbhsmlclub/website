@@ -1,0 +1,10 @@
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200
+force = false
+[[redirects]]
+from = "https://mbhsml.netlify.app/*"
+to = "https://ml.mbhs.edu/:splat"
+status = 301
+force = true
