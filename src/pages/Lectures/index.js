@@ -1,42 +1,77 @@
-import React, { lazy, useEffect, useState, useRef, Suspense, Fragment } from 'react';
+import React, { createContext, lazy, useEffect, useState, useRef, Suspense, Fragment } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import PageLayout from 'components/PageLayout';
 import Hero from 'pages/Hero';
 import GetStarted from 'pages/GetStarted';
 import Panel from './Panel';
-import { useAppContext, useScrollRestore } from 'hooks';
+import { useScrollRestore } from 'hooks';
+import fetchLectures from 'lectures';
+import Lecture from './Lecture';
+
 
 const NotFound = lazy(() => import('pages/NotFound'));
 
+const LectureContext = createContext({});
+
+
 function Lectures(props) {
-  const { id, sectionRef, visible, ...rest } = props;
-  const titleId = `${id}-title`;
-  const { lectures } = useAppContext();
+  const { id, title, description, sectionRef, visible, ...rest } = props;
+
+  const [lectures, setLectures] = useState([]);
+
+  useEffect(() => {
+    const grabLectures = async () => {
+      const lectureData = await Promise.all(fetchLectures);
+      setLectures(lectureData);
+    };
+
+    grabLectures();
+  }, []);
 
   if (!sectionRef) return (
+    <PageLayout>
     <Suspense fallback={<Fragment />}>
       <Switch>
+      {lectures?.map(({ slug, ...rest }) => (
+              <Route
+                exact
+                key={slug}
+                path={`/lectures/${slug}`}
+                render={() => <Lecture slug={slug} {...rest} />}
+              />
+            ))}
         <Route exact path="/lectures" component={LecturesList} />
         <Route component={NotFound} />
       </Switch>
     </Suspense>
+    </PageLayout>
   );
 
   return (
     <Panel
       id={id}
-      titleId={titleId}
+      name={title}
+      titleid={title}
       sectionRef={sectionRef}
       visible={visible}
-      lectures={lectures && lectures?.filter(({ closed }) => !closed)}
+      lectures={lectures}
       {...rest}
     />
   );
 }
 
 function LecturesList() {
-  const { lectures } = useAppContext();
+  const [lectures, setLectures] = useState([]);
+
+  useEffect(() => {
+    const grabLectures = async () => {
+      const lectureData = await Promise.all(fetchLectures);
+      setLectures(lectureData);
+    };
+
+    grabLectures();
+  }, []);
   const [visibleSections, setVisibleSections] = useState([]);
   const lecturesList = useRef();
   const getStarted = useRef();
@@ -44,7 +79,6 @@ function LecturesList() {
 
   useEffect(() => {
     const revealSections = [lecturesList, getStarted];
-
     const sectionObserver = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -71,23 +105,25 @@ function LecturesList() {
         title="Lectures - MBHS ML Club"
       />
       <PageLayout>
-        <Hero
-          label="Lectures"
-          title="New Lectures Every Week"
-        />
-        <Lectures
-          alternate
-          id="lectures"
-          title=""
-          lectures={lectures && lectures?.filter(({ closed }) => !closed)}
-          sectionRef={lecturesList}
-          visible={visibleSections.includes(lecturesList.current)}
-        />
-        <GetStarted
-          id="get-started"
-          sectionRef={getStarted}
-          visible={visibleSections.includes(getStarted.current)}
-        />
+        <LectureContext.Provider value={{ lectures }}>
+          <Hero
+            label="Lectures"
+            title="New Lectures Every Week"
+          />
+          <Lectures
+            alternate
+            id="lectures"
+            title=""
+            lectures={lectures && lectures?.filter(({ closed }) => !closed)}
+            sectionRef={lecturesList}
+            visible={visibleSections.includes(lecturesList.current)}
+          />
+          <GetStarted
+            id="get-started"
+            sectionRef={getStarted}
+            visible={visibleSections.includes(getStarted.current)}
+          />
+        </LectureContext.Provider>
       </PageLayout>
     </Fragment>
   );

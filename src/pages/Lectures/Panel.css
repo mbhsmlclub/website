@@ -4,9 +4,8 @@
 }
 
 .panel .title2 {
-  /* max-width: 564px; */
-  /* width: auto; */
-  align-items: center;
+  max-width: 564px;
+  width: auto;
 }
 
 .panel .button {

@@ -24,7 +24,7 @@ const Hero = ({
   children,
   ...rest
 }) => {
-  const titleId = id && `${id}-title`;
+  const titleid = id && `${id}-title`;
   useScrollRestore();
 
   const MetaWrapper = ({ children }) => center
@@ -39,7 +39,7 @@ const Hero = ({
       })}
       ref={sectionRef}
       id={id}
-      aria-labelledby={titleId}
+      aria-labelledby={titleid}
       tabIndex={-1}
       {...rest}
     >
@@ -54,8 +54,8 @@ const Hero = ({
             <div className={classNames('hero__content', { 'hero__content--center': center })}>
               <MetaWrapper>
                 {label && <Label>{label}</Label>}
-                {title && <Title id={titleId} dark={dark}>{title}</Title>}
-                {title2 && <Title2 id={titleId} dark={dark}>{title2}</Title2>}
+                {title && <Title id={titleid} dark={dark}>{title}</Title>}
+                {title2 && <Title2 id={titleid} dark={dark}>{title2}</Title2>}
                 {paragraph && <Paragraph dark={dark}>{paragraph}</Paragraph>}
               </MetaWrapper>
               {button && <Button as="a" dark={dark} {...button} />}

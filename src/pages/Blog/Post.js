@@ -87,7 +87,7 @@ const PostParagraph = ({ children, ...rest }) => (
 const ArticleImage = ({ src, alt, ...rest }) => {
   const [size, setSize] = useState();
   const imgRef = useRef();
-  const imgSrc = src.startsWith('http')// ? src : require(`posts/assets/${src}`);
+  const imgSrc = src.startsWith('http') ? src : require(`posts/assets/${src}`);
 
   useEffect(() => {
     const { width, height } = imgRef.current;
