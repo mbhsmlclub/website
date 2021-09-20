@@ -30,7 +30,6 @@ function Lectures(props) {
   }, []);
 
   if (!sectionRef) return (
-    <PageLayout>
     <Suspense fallback={<Fragment />}>
       <Switch>
       {lectures?.map(({ slug, ...rest }) => (
@@ -45,7 +44,6 @@ function Lectures(props) {
         <Route component={NotFound} />
       </Switch>
     </Suspense>
-    </PageLayout>
   );
 
   return (
