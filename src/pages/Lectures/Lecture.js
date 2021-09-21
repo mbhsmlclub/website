@@ -54,7 +54,7 @@ const LectureWrapper = ({
                         <Paragraph className="lecture__tag">
                           <label>Slides:</label>
                             <Anchor target="_blank" rel="noreferrer noopener" href={slides}>
-                              Google Slides
+                              PDF
                             </Anchor>
                         </Paragraph>
                         <Paragraph className="lecture__tag">
