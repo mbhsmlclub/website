@@ -9,6 +9,7 @@ import Anchor from 'components/Anchor';
 import { Link } from 'components/Link';
 import { reflow } from 'utils/transition';
 import prerender from 'utils/prerender';
+import PageLayout from 'components/PageLayout';
 import './Lecture.css';
 
 const LectureWrapper = ({ 
@@ -26,6 +27,7 @@ const LectureWrapper = ({
           <Helmet
             title={`${title} - MBHS ML Club`}
           />
+          <PageLayout>
           <Transition
               appear={!prerender}
               in={!prerender}
@@ -92,6 +94,7 @@ const LectureWrapper = ({
             <GetStarted
               accent
             />
+            </PageLayout>
         </Fragment>
     </Fragment>
   )
