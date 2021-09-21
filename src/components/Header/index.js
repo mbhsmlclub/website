@@ -43,7 +43,7 @@ const Header = ({ dark }) => {
       <div className="header__nav">
         <a
           className="header__cta"
-          href='https://discord.gg/Usz9UXbQNy'
+          href='https://docs.google.com/forms/d/e/1FAIpQLScyqBUVQWXX2ZnCK_0l3P1nteFDx-uidY5AoiOpIgl1aOqSsg/viewform'
         >
           Get Started
         </a>
