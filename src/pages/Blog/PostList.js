@@ -12,10 +12,10 @@ const PostList = ({ posts }) => {
   return (
     <Fragment>
       <Helmet
-        title="Blog - Project Modern"
+        title="Blog - MBHS ML Club"
         meta={[{
           name: "description",
-          content: "The official blog of the Project Modern community and format.",
+          content: "The official blog of Montgomery Blair High School's Machine Learning Club.",
         }]}
       />
       <Hero
