@@ -16,7 +16,7 @@ const LectureWrapper = ({
   children,
   title,
   date,
-  ,
+  slides,
   notebook,
   code,
   ...rest 
@@ -52,8 +52,8 @@ const LectureWrapper = ({
                             })}
                         </Paragraph>
                         <Paragraph className="lecture__tag">
-                          <label>:</label>
-                            <Anchor target="_blank" rel="noreferrer noopener" href={}>
+                          <label>Slides:</label>
+                            <Anchor target="_blank" rel="noreferrer noopener" href={slides}>
                               PDF
                             </Anchor>
                         </Paragraph>
