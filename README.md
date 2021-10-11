@@ -28,4 +28,4 @@ yarn build
 ```
 
 ## Created By
-[Areeb Gani](https://github.com/Qwerty71), [Michael Ilie](https://mci.sh), [Vijay Shanmugam](https://vijayrs.ml)
+[Areeb Gani](https://github.com/Qwerty71), [Michael Ilie](https://mci.sh), [Vijay Shanmugam](https://vijayrs.com)
