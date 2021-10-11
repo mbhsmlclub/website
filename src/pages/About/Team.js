@@ -37,12 +37,12 @@ function Team(props) {
       </a>
       </div>
       <div>
-      <a href='https://www.vijayrs.ml/'>
+      <a href='https://www.vijayrs.com/'>
         <Tilt glareEnable={true} glareMaxOpacity={0.8} tiltMaxAngleX={5} tiltMaxAngleY={5} glareColor="#ffffff" glarePosition="bottom">
           <img src={VijayIMG} alt="Vijay Shanmugam" width='450' height='450'/>
         </Tilt>
       </a>
-      <a className="member__name" href='https://www.vijayrs.ml/'>
+      <a className="member__name" href='https://www.vijayrs.com/'>
           Vijay Shanmugam
       </a>
       </div>
