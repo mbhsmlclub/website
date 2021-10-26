@@ -5,7 +5,7 @@ const allLectures = require.context(
   'lazy'
 );
 
-const lectures = allLectures.keys().map(async filePath => {
+const lectures = allLectures.keys().reverse().map(async filePath => {
   const module = await allLectures(filePath);
 
   return {

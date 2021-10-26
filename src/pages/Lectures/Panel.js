@@ -29,7 +29,7 @@ const Panel = ({
         {(!lectures && lectures !== false) && <Paragraph>Coming Soon...</Paragraph>}
         {lectures?.length === 0 && <Paragraph>{altText}</Paragraph>}
       </div>
-      {lectures?.length > 0 && lectures?.reverse().slice(0, 3).map(({ slug, title, description }) => (
+      {lectures?.length > 0 && lectures?.map(({ slug, title, description }) => (
           <Link
             key={slug}
             className="panel__lecture"
