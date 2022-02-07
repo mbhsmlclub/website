@@ -22,7 +22,7 @@ const Panel = ({
     <Hero
       className={classNames('panel', { 'panel--alternate': alternate })}
       label={!alternate && label}
-      title2={!alternate && title || alternateTitle}
+      title2={(!alternate && title) || alternateTitle}
       {...rest}
     >
       <div className={classNames('panel__lectures', { 'panel__lectures--alternate': alternate })}>
