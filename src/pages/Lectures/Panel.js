@@ -30,7 +30,7 @@ const Panel = ({
         {(!lectures && lectures !== false) && <Paragraph>Coming Soon...</Paragraph>}
         {lectures?.length === 0 && <Paragraph>{altText}</Paragraph>}
       </div>
-      {alternate  && lectures?.length > 0 && lectures?.reverse().map(({ slug, title, description }) => (
+      {alternate  && lectures?.length > 0 && lectures?.reverse().map(({ lectureNum, slug, title, description }) => (
           <Link
             key={slug}
             className="panel__lecture"
@@ -47,7 +47,7 @@ const Panel = ({
             <Icon icon="plus" />
           </Link>
         ))}
-      {!alternate && lectures?.length > 0 && lectures?.slice(0, 3).map(({ slug, title, description }) => (
+      {!alternate && lectures?.length > 0 && lectures?.slice(0, 3).map(({ lectureNum, slug, title, description }) => (
           <Link
             key={slug}
             className="panel__lecture"
